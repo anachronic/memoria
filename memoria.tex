@@ -20,7 +20,54 @@
 \maketitle
 
 \begin{abstract}
-\lipsum[1-4]
+    El Programa de Magíster en Tecnologías de la Información (MTI), que imparte
+    el Departamento de Ciencias de la Computación de la Universidad de Chile,
+    recibe de forma \emph{online} postulaciones de ingreso al programa a través
+    de la plataforma UCampus. Estas postulaciones deben ser descargadas por el
+    personal de apoyo, y luego evaluadas por miembros del comité académico del
+    programa. Estos últimos emiten una recomendación de aceptación o rechazo
+    para cada postulación. El coordinador del programa analiza esas
+    recomendaciones y emite una resolución al respecto.
+
+    Actualmente, el proceso de evaluación de cada postulación se lleva a cabo a
+    través del intercambio de correos electrónicos, coordinados en gran medida
+    por el personal de apoyo al programa. Estas personas se encargan de enviar
+    los antecedentes a los evaluadores, y solicitar su recomendación de
+    aceptación o rechazo, recolectar las recomendaciones, y enviárselas al
+    coordinador para que emita una resolución. Todo esto, con las limitaciones
+    típicas del intercambio de correos electrónicos en términos de eficiencia
+    del procesamiento y la eventual pérdida de información.
+    
+    Por otra parte, esta forma de procesar las evaluaciones no permite extraer
+    estadísticas o mantener la historia de las evaluaciones. Sin datos
+    fidedignos acerca del funcionamiento de este proceso, se vuelve difícil
+    poder mejorarlo. Hoy en día el MTI representa un canal importante de
+    transferencia de conocimiento desde el Departamento hacia la industria, por
+    lo tanto, todos sus procesos deben funcionar lo mejor posible.
+    
+    El objetivo de este trabajo de memoria es desarrollar un sistema que permita
+    automatizar gran parte del procesamiento de las postulaciones al MTI,
+    alivianando la carga de trabajo sobre las personas involucradas, mejorando
+    la gestión de éste, y la capacidad de medir distintos aspectos del proceso.
+    
+    Para alcanzar el objetivo planteado se desarrolló un sistema web que
+    gestiona las evaluaciones de las postulaciones. Éste extrae los datos desde
+    UCampus utilizando un scraper, almacena las postulaciones en su base de
+    datos, e implementa un workflow que automatiza gran parte del proceso antes
+    descrito.
+    
+    Debido al esfuerzo que requiere la ejecución de dicho workflow, así como el
+    número de participantes que intervienen en él, la solución desarrollada fue
+    evaluada con postulaciones de prueba (con información ficticia), donde dos
+    miembros del comité académico ejecutaron el proceso completo. Durante las
+    pruebas, estas personas debieron asumir los distintos roles involucrados en
+    el proceso, y tomar las acciones correspondientes a dichos roles.
+    
+    Como resultado de las pruebas se vió que el sistema soporta correctamente el
+    proceso de evaluación de postulaciones, y sólo se indicaron mejoras a la
+    usabilidad de las interfaces del mismo. Estas mejoras serán abordadas como
+    parte del trabajo a futuro de este proyecto.
+    
 \end{abstract}
 
 \begin{dedicatoria}
@@ -40,7 +87,7 @@ Una dedicatoria corta.
 
 \mainmatter
 
-\input{intro.tex}
+\input{introduccion.tex}
 \input{cap1.tex}
 \input{cap2.tex}
 \input{conclu.tex}

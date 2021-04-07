@@ -1,0 +1,98 @@
+\begin{intro}
+	El Departamento de Ciencias de la Computación de la Universidad de Chile
+	ofrece distintos programas de magíster. Uno de ellos es el Magíster en
+	Tecnologías de la Información (en adelante MTI). Uno de los objetivos de
+	este programa es formar especialistas con conocimientos de aspectos
+	aplicados respecto al uso, gestión y adopción de Tecnologías de la
+	Información y Comunicaciones.
+
+	Teniendo en cuenta el perfil de los profesionales que busca formar este
+	programa, y la naturaleza misma del magíster, resulta razonable pensar que
+	el proceso de postulación al mismo, así como el procesamiento de dichas
+	postulaciones, se haga usando herramientas computacionales.
+	
+	Hoy en día, la postulación a este programa se hace a través de la plataforma
+	UCampus\footnote{UCampus es un Centro Tecnológico que desarrolla plataformas
+	de apoyo a la gestión, automatizando los procesos de Instituciones de
+	Educación Superior, en particular el de la Universidad de Chile.
+	https://ucampus.cl.}. En esa plataforma, el postulante debe ingresar sus
+	datos personales, y adjuntar un conjunto de documentos relevantes para
+	respaldar su  postulación. Entre esos documentos están las cartas de
+	recomendación, el currículum del postulante, su certificado de título y su
+	carta motivacional.
+	
+	Una vez enviada la postulación a través de UCampus, los documentos quedan
+	disponibles para que cada programa (en este caso, el MTI) haga con ellos lo
+	que estime conveniente. UCampus no ofrece la funcionalidad para apoyar el
+	procesamiento de las postulaciones, por lo que cada programa debe hacerlo
+	por fuera de esta plataforma. 
+
+	\section{Problema Abordado}
+
+	El proceso de evaluación de postulaciones al MTI se realiza en forma manual.
+	Para ello, un funcionario del Programa de Educación Continua (PEC) del DCC
+	inicia el proceso descargando manualmente cada uno de los archivos subidos a
+	UCampus por el postulante. Esa información luego es enviada a los miembros
+	del comité académico del programa a través de un correo electrónico. Los
+	miembros de ese comité evalúan las postulaciones. Estas personas pueden
+	solicitar información adicional al postulante en caso que se requiera; y en
+	esos casos, el funcionario del PEC actúa como intermediario entre el
+	postulante y el comité académico.
+
+	Cuando la información de una postulación está completa, los evaluadores emiten
+	un juicio individual y justificado respecto a la admisión o no de cada
+	postulante al programa. Esta información es enviada vía correo electrónico al
+	funcionario del PEC, quien reúne todas las opiniones de los evaluadores acerca
+	de una postulación, y luego se las envía al coordinador del programa para que
+	decida la admisión o rechazo del postulante. En esa instancia, el coordinador
+	revisa manualmente todas las evaluaciones y emite un juicio formal, el cual debe
+	ser registrado en la plataforma UCampus, e informado al postulante.
+
+	Este flujo de trabajo (workflow) es completamente informal, por lo que los
+	tiempos de procesamiento de una postulación varían mucho, dependiendo de la
+	carga de trabajo que tengan los funcionarios del PEC y el resto de los
+	participantes. Dado que hoy en día las evaluaciones de las postulaciones se
+	realizan de forma manual, el proceso se vuelve lento, costoso y propenso a
+	errores. Además, el flujo de trabajo asociado a este proceso es muy difícil de
+	monitorear, medir y mejorar. Otro aspecto importante es que este proceso manual
+	no escala bien, por lo que se requieren sistemas de apoyo al procesamiento de
+	estas postulaciones.
+
+	Tomando en cuenta lo anterior, en esta memoria se diseñó e implementó un sistema Web que:
+
+	\begin{enumerate}
+		\item Agiliza el proceso de evaluación de postulaciones al MTI.
+		\item Facilita la recopilación y almacenamiento de datos relevantes,
+		tanto del postulante como de la evaluación de su postulación.
+	\end{enumerate}
+
+	El sistema no busca extender la funcionalidad de UCampus, ni la validez de
+	la postulación, por lo tanto, en la memoria se asume que los datos que
+	provienen de dicha plataforma son correctos. 
+
+	\section{Objetivos de la Memoria}
+
+	El objetivo general de esta memoria fue desarrollar un sistema Web que
+	automatiza parte del flujo de trabajo asociado al procesamiento de
+	postulaciones al Magíster en Tecnologías de la Información; programa que es
+	impartido por la Escuela de Postgrado de la FCFM\footnote{Facultad de
+	Ciencias Físicas y Matemáticas de la Universidad de Chile} a través del
+	DCC\footnote{Departamento de Ciencias de la Computación}. Los objetivos
+	específicos definidos para alcanzar el objetivo general fueron los
+	siguientes:
+
+	\begin{enumerate}
+		\item Desarrollar un servicio de software que extraiga automáticamente
+		la información de las postulaciones al programa, desde la plataforma
+		UCampus.
+		\item Desarrollar un sistema que automatice el flujo de trabajo
+		(workflow) de evaluación de las postulaciones.
+		\item Desarrollar un servicio que facilite la toma de decisiones del
+		Coordinador del Programa, respecto a la aceptación o rechazo de los
+		postulantes, y a la comunicación de éste con la Escuela de Postgrado.
+	\end{enumerate}
+
+
+	\section{Estructura del Documento}
+	**Falta añadir aquí la estructura del documento**.
+\end{intro}
