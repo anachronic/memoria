@@ -1,0 +1,51 @@
+\documentclass[upright, contnum]{umemoria}
+\depto{DEPARTAMENTO DE CIENCIAS DE LA COMPUTACIÓN}
+\author{NICOLÁS SALAS VEGA}
+\title{DESARROLLO DE UN SISTEMA DE EVALUACIÓN DE POSTULACIONES AL MAGÍSTER EN TECNOLOGÍAS DE LA INFORMACIÓN}
+\auspicio{.}
+\date{ABRIL 2021}
+\guia{SERGIO OCHOA, DANIEL PEROVICH}
+\carrera{INGENIERO CIVIL EN COMPUTACIÓN}
+\memoria{MEMORIA PARA OPTAR AL TÍTULO DE}
+\comision{JUAN ÁLVAREZ, CLAUDIO GUTIÉRREZ}
+
+\usepackage{lipsum}
+
+% \usepackage[latin1]{inputenc}
+% \usepackage[T1]{fontenc}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+
+\begin{abstract}
+\lipsum[1-4]
+\end{abstract}
+
+\begin{dedicatoria}
+Una dedicatoria corta.
+\end{dedicatoria}
+
+\begin{thanks}
+\lipsum[1-2]
+\end{thanks}
+
+\cleardoublepage
+\tableofcontents
+\cleardoublepage
+\listoftables
+\cleardoublepage
+\listoffigures
+
+\mainmatter
+
+\input{intro.tex}
+\input{cap1.tex}
+\input{cap2.tex}
+\input{conclu.tex}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{bibliografia}
+\end{document}
