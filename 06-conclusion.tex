@@ -1,0 +1,68 @@
+\begin{conclusion}
+	Este trabajo se enmarca en el contexto de la evaluación de postulaciones de
+	candidatos a ingresar al programa de Magíster de Tecnologías de la
+	Información, que imparte la Escuela de Postgrado a través del DCC. Este
+	proceso de evaluación, hasta antes de este trabajo, se realizaba de forma no
+	automatizada; particularmente, era un proceso manual apoyado por correo
+	electrónico.
+
+	Entendiendo el contexto general en el que se enmarca este trabajo, el
+	objetivo general de esta memoria fue desarrollar un sistema Web, que
+	automatice parte del flujo de trabajo asociado al procesamiento de las
+	postulaciones al programa de Magíster en TI. Para alcanzar ese objetivo, se
+	definieron tres objetivos específicos:
+
+	\begin{itemize}
+		\item Desarrollar un servicio que extraiga datos de postulaciones desde
+		UCampus.
+		\item Desarrollar un sistema que asista a los participantes del proceso
+		de evaluación en realizar su labor y automatizar el flujo de evaluación
+		de cada postulación.
+		\item Desarrollar un servicio que facilite la toma de decisiones del
+		Coordinador del programa, respecto a la aceptación o rechazo de las
+		postulaciones.
+	\end{itemize}
+
+	La solución desarrollada para lograr dichos objetivos fue una aplicación web
+	que consta de dos componentes: front-end y back-end. El front-end es la
+	interfaz con la que interactúan los participantes del proceso, cumpliendo el
+	objetivo de asistir a éstos con las tareas que les competen. Por su parte,
+	el back-end es el servicio que (1) extrae datos de postulaciones desde
+	UCampus, (2) almacena datos tanto de cada postulación como de su historial
+	de evaluaciones y su resolución y (3) disponibiliza los datos de una forma
+	segura para el consumo de éstos por parte del front-end.
+
+	La solución fue evaluada por los actuales coordinadores del Programa,
+	quienes han participado en la evaluación de postulaciones durante al menos
+	los últimos 10 años, asumiendo distintos roles en dicho proceso. Durante la
+	evaluación estas personas asumieron temporalmente distintos roles (perfiles
+	de usuario) para poder realizar el flujo de trabajo completo.
+
+	Como resultado de la evaluación se pudo ver que el software obtenido es
+	estable y permite realizar las tareas asignadas a cada rol. También se pudo
+	ver que el software también permite la interacción con la plataforma
+	UCampus, con las limitaciones mencionadas en el capítulo 2. Estas
+	limitaciones se deben a restricciones impuestas por UCampus para cualquier
+	software que quiera interactuar con dicha plataforma. A pesar de ello, la
+	funcionalidad implementada para la interacción con UCampus reduce
+	considerablemente la carga de trabajo y las chances de cometer errores por
+	parte de los usuarios asistentes y del coordinador.
+
+	En resumen, se obtuvo un software funcional que puede ser puesto en
+	producción (en marcha blanca), para procesar las postulaciones del MTI. Con
+	algunos ajustes menores es posible que este software pueda ser utilizado
+	para apoyar la evaluación de las postulaciones a otros programas del DCC,
+	como por ejemplo, al Magíster en Ciencias y al Doctorado en Computación.
+
+	Como parte del trabajo a futuro, hay dos líneas de trabajo. La primera (y
+	más de corto plazo) es abordar los comentarios hechos por los evaluadores
+	durante la evaluación del sistema. La segunda línea (de mediano plazo) es
+	revisar este software con los coordinadores de otros programas del DCC, a
+	fin de identificar funcionalidad extra que estos pudieran requerir. Luego,
+	en base a ello, generar un único sistema que (aunque tenga variantes) sirva
+	para apoyar a todos los programas.
+
+	%faltan lecciones aprendidas
+
+	
+\end{conclusion}
