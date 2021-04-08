@@ -1,0 +1,117 @@
+\chapter{Concepción de la Solución}
+
+En este capítulo se presenta la descripción del sistema desarrollado para dar
+solución al problema planteado.
+
+\section{Descripción del Proceso Automatizado}
+
+Habiendo entendido cómo funciona el proceso actual, se puede concebir cómo
+automatizar el proceso de postulaciones al MTI. En efecto, el proceso parte
+cuando un alumno realiza su postulación en UCampus; ésta se mantiene ahí hasta
+que es resuelta en la misma plataforma. Sin embargo, el proceso interno de
+resolución del programa MTI no está actualmente tomado en cuenta por UCampus.
+
+Para automatizarlo, se debe partir por extraer los datos desde UCampus. Este
+objetivo se logra haciendo un scraper que recorra el sitio, extraiga los datos
+de postulaciones y los guarde en una base de datos. Teniendo estos datos, se
+puede construir un sistema que asista en el workflow de postulaciones.
+
+Luego, los procesos de validación, evaluación y resolución de la postulación de
+cada alumno se realizan actualmente a través de una seguidilla de correos y
+recopilación manual de información. Para automatizar este proceso se desarrolló
+un sistema que administra el workflow interno de resolución de una postulación
+según los requisitos del MTI.
+
+El alcance del sistema desarrollado termina con la evaluación del coordinador,
+quien decide si se acepta o rechaza la postulación. Para terminar el workflow
+requerido por la Escuela de Postgrado, es necesario que dicho proceso se haga a
+través de la plataforma UCampus. Por esa razón, el sistema desarrollado redirige
+al coordinador a la postulación en UCampus, para que sea resuelta según el
+proceso definido por la Escuela.
+
+\section{Principales Requisitos de la Solución}
+
+A continuación se presentan los principales requisitos de la solución, los
+cuales sirvieron de guía para el desarrollo de la misma.
+
+\begin{itemize}
+\item Crear un scraper que extraiga datos de postulaciones, tanto nuevas como ya
+existentes, desde la plataforma UCampus.
+\item Mantener al scraper corriendo periódicamente, de modo que agregue las
+postulaciones nuevas y actualice las postulaciones que tienen datos nuevos.
+\item Crear una interfaz de usuario que permita validar las postulaciones e
+iniciar el proceso de evaluación de éstas.
+\item Crear una interfaz de usuario que permita evaluar las postulaciones por
+parte de los miembros del comité del programa, y de su coordinador.
+\item Crear una interfaz de usuario que permita marcar la resolución de cada
+postulación. Se debe redirigir a UCampus para que la postulación siga su proceso
+normal en dicha plataforma.
+\item Desarrollar un módulo de alertas por correo, que notifique a los
+participantes respecto a etapas del workflow que tienen tareas que resolver por
+parte de ellos.
+\end{itemize}
+
+\section{Perfiles de Usuarios Soportados}
+
+% Necesita refs
+En base a los actores del proceso presentados en el capítulo 2 (sección 2.1), se
+describe a continuación en qué parte del proceso se involucra cada rol.
+
+\subsection{Postulante}
+
+El postulante no participa activamente del sistema desarrollado. La razón de
+esto es porque el objetivo del sistema es automatizar el proceso de evaluación
+de las postulaciones, aunque la postulación misma se realiza en UCampus. Este
+proceso de evaluación es un workflow externo al se lleva a cabo a través de
+UCampus, por lo tanto, el postulante sólo recibe el resultado de su postulación
+por parte de la Escuela.
+
+\subsection{Miembro del Comité Académico del Programa}
+
+Los miembros del comité son los encargados de evaluar las postulaciones. Cuando
+una postulación es válida (es decir, es correcta y está completa), los miembros
+del comité dan su opinión acerca del potencial del postulante, su pregrado, su
+experiencia laboral, la carta motivacional enviada, las cartas de recomendación
+recibidas y otras observaciones adicionales. Con eso, cada miembro emite una
+recomendación de aceptación o rechazo del postulante en una escala de 4 puntos:
+aceptar, posible aceptación, posible rechazo, o rechazo. En el Anexo B se
+presenta el formulario (en Word) actualmente usado para evaluar estas
+postulaciones.
+% ^ necesita ref tb
+
+Típicamente una postulación tendrá 4 evaluaciones, una por cada miembro del
+comité, pero no necesariamente en todos los casos. En aquellos casos donde hay 3
+miembros de acuerdo respecto a la aceptación o rechazo de un candidato, el
+coordinador del programa puede decidir sin esperar a que arribe la última
+evaluación. Por otra parte, cuando una vez que todos los miembros del comité han
+emitido sus recomendaciones sobre un postulante, la postulación pasa
+automáticamente a evaluación por parte del coordinador del programa.
+
+\subsection{Coordinador de Magíster / Presidente del Comité Académico}
+
+Cuando todos los miembros del comité emiten su recomendación, el coordinador
+hará lo mismo teniendo en cuenta las recomendaciones hechas anteriormente. Esto
+se hace para que quede constancia de la opinión del coordinador.
+
+En este paso, el coordinador decide si se acepta o rechaza la postulación. Esta
+resolución debe hacerse en la plataforma UCampus, pues ese es el conducto formal
+para la Escuela de Postgrado. Debido a eso, el sistema de evaluación
+desarrollado abre una ventana nueva con la resolución de la postulación, para
+facilitarle la labor al coordinador.
+
+\subsection{Asistente / Funcionario del PEC}
+
+Las postulaciones en UCampus son incrementales. Esto es, pueden estar
+almacenadas en forma incompleta, hasta que eventualmente el postulante rellena
+todos los datos necesarios para su evaluación, o bien después de un tiempo sin
+completarse, el programa decide darle de baja.
+
+Los asistentes o funcionarios del PEC cumplen dos funciones. La primera, es
+validar los datos de cada postulación. Vale decir, a pesar de que una
+postulación tenga todos los datos necesarios, el sistema no puede verificar
+automáticamente que los documentos contengan la información correcta. Este
+trabajo lo hacen los asistentes.
+
+La segunda función que cumplen, es monitorear las evaluaciones. Es decir, si una
+evaluación lleva demasiado tiempo sin completar, los asistentes les recuerdan a
+los evaluadores que deben completar la postulación.
